@@ -1,0 +1,25 @@
+.content{
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+    z-index:999;
+    width:300px;
+    height: 35vh;
+    text-align:center;
+    padding:60px 32px;
+    background:rgba(255,255,255,0.04);
+    box-shadow:-1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+label{
+    font-size: 20px;
+}
+table {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0,0,0,.125);
+}
+input::-webkit-input-placeholder {
+    font-size: 13px;
+  }

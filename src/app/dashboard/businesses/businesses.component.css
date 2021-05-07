@@ -1,0 +1,54 @@
+.sim {
+    max-width: 330px;
+    margin-top: 100px;
+    height: 270px;
+    margin-left: 20px;
+}
+.head{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+}
+.b{
+    margin-left: 5px;
+    margin-top: 15px;
+}
+.b1{
+    margin-top: -60px;
+    margin-left: 160px;
+}
+.subscriptions{
+    margin-left:360px;
+    margin-top: -270px;
+    width: 330px;
+    height: 270px;   
+}
+.dth{
+    margin-left:700px;
+    margin-top: -270px;
+    width: 330px;
+    height: 270px; 
+}
+.sub-b{
+    margin-left: 5px;
+}
+.sub-fav{
+    margin-top: -60px;
+    margin-left: 160px;
+}
+.dth-b{
+    margin-left: 5px;
+    margin-top: 10px;
+}
+.dth-fav{
+    margin-top: -60px;
+    margin-left: 160px;
+}
+button{
+    background-color:rgb(58, 154, 185);
+    border: 1px solid rgb(99, 170, 194);
+}
+button:hover{
+    background-color:rgb(36, 114, 139);
+    border: 1px solid rgb(99, 170, 194);
+}

@@ -1,0 +1,25 @@
+<div class="container">
+    <table class="table table-strriped custab">
+          <thead>
+              <tr>
+                  <th>Registered Cards</th>        
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let number of userCardDetails">
+                  <td>{{number.cardNumber}}</td>
+                  <td class="text-center"><button class="btn btn-success view" (click)="getCardNumber(number.cardId)" ><span class="glyphicon glyphicon-remove"></span>Pay with this card</button></td>
+              </tr>
+          </tbody>
+      </table>
+</div>
+<div *ngIf="initial">
+    <div class="content">
+        <form [formGroup] = "cvvForm">
+            <label class="control-label required">Enter CVV</label><br><br>
+            <input type="text"  class="form-control" formControlName="cvv" placeholder="CVV">
+            <small class="text-danger" *ngIf="cvvForm.get('cvv')!.errors?.pattern">Enter a valid 3 digit number.</small><br><br>
+            <button class="btn btn-primary" [disabled]="!cvvForm.valid" (click)="proceed()">Proceed to pay</button>
+        </form>
+    </div>
+</div>

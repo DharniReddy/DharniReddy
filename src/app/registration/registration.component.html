@@ -1,0 +1,85 @@
+<div style="text-align: center">
+
+    <!-- <h2>alert({{message}})</h2> -->
+
+</div>
+<body>
+  <!-- <mat-card class="example-card">
+    <mat-card-header class="example-header1">
+      <div mat-card-avatar class="example-header"></div>
+      <mat-card-title >Register Here</mat-card-title> 
+     </mat-card-header>-->
+      <h1>Register Here</h1>
+   
+ <!-- <mat-card-content> -->
+<div class ='container-fluid'>
+    <!-- <h1 style="color:blue;padding-left:100px;">Registration Form</h1> -->
+    <!-- <img src="assets/bg.jpg" class="img-rounded float-right" width='600px' height="500px" alt="Cinque Terre"> -->
+    <form [formGroup] = "registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group " >  
+          <label for="userName" class="control-label required">Username</label>
+          <input type="text"  formControlName="userName" [class.is-invalid]="registrationForm.get('userName')!.invalid && registrationForm.get('userName')!.touched"  class="form-control" placeholder="Enter UserName"
+          >
+          <!--<small class="text-danger" [class.d-none]="registrationForm.get('userName')!.valid || registrationForm.get('userName')!.untouched">Name is required</small>
+         <small class="text-danger" *ngIf="registrationForm.get('userName')!.errors?.forbiddenName">{{userName.errors?.forbiddenName.value}} Username is not allowed</small>  
+        -->
+
+      
+            <div *ngIf="registrationForm.get('userName')!.invalid && registrationForm.get('userName')!.touched">
+              <small class="text-danger" *ngIf="registrationForm.get('userName')!.errors?.required">Username is required.</small>
+              <small class="text-danger" *ngIf="registrationForm.get('userName')!.errors?.minlength">Min length is 3.</small>
+              <small class="text-danger" *ngIf="registrationForm.get('userName')!.errors?.pattern">UserName should contain only Alphabets.</small>
+          </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="control-label required">Password</label>
+        <input type="password"  formControlName="password" class="form-control" placeholder="Enter Password">
+        <div *ngIf="registrationForm.get('password')!.invalid && registrationForm.get('password')!.touched">
+          <small class="text-danger" *ngIf="registrationForm.get('password')!.errors?.required">Password is required.</small>
+          <small class="text-danger" *ngIf="registrationForm.get('password')!.errors?.minlength">Min length is 8.</small>
+         
+      </div>
+      </div>
+  
+      <div class="form-group ">
+        <label class="control-label required">Confirm Password</label>
+        
+        <input type="password" [class.is-invalid]="registrationForm.errors?.misMatch" formControlName="confirmPassword" class="form-control" placeholder="Confirm password"> 
+        <small class="text-danger" *ngIf="registrationForm.errors?.misMatch">Password is not matched</small>
+        <div *ngIf="registrationForm.get('confirmPassword')!.invalid && registrationForm.get('confirmPassword')!.touched">
+          <small class="text-danger" *ngIf="registrationForm.get('confirmPassword')!.errors?.required">ConfirmPassword is required.</small>
+          
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label class="control-label required">Email</label>
+        <!--<button type="button" class="btn btn-secondary btn-sm m-2" >Add-Email</button>-->
+        <input type="email" [class.is-invalid]="registrationForm.get('email')!.invalid && registrationForm.get('email')!.touched" formControlName="email" class="form-control" placeholder="Enter a valid Email">
+        <!--<small class="text-danger" [class.d-none]="registrationForm.get('email')!.valid || registrationForm.get('email')!.untouched">Email is required*</small>-->
+        <div class="text-danger" *ngIf="registrationForm.get('email')!.errors?.email">Email is not valid.</div>
+        <div *ngIf="registrationForm.get('email')!.invalid && registrationForm.get('email')!.touched">
+          <small class="text-danger" *ngIf="registrationForm.get('email')!.errors?.required">Email is required.</small>
+          
+
+
+        </div>
+      </div>
+      
+      <div class="form-group">
+          <label class="control-label required">MobileNumber</label>
+          <input type="tel" [class.is-invalid]="registrationForm.get('mobileNumber')!.invalid && registrationForm.get('mobileNumber')!.touched" formControlName="mobileNumber" class="form-control" placeholder="Enter Mobile number">
+          <div *ngIf="registrationForm.get('mobileNumber')!.invalid && registrationForm.get('mobileNumber')!.touched">
+          <small class="text-danger" *ngIf="registrationForm.get('mobileNumber')!.errors?.required">MobileNumber is required.</small>
+          <small class="text-danger" *ngIf="registrationForm.get('mobileNumber')!.errors?.pattern">Enter Valid 10 digit mobile number.</small>
+        </div>
+      </div>
+      <button  class="btn btn-primary " type="submit">Register</button>
+      <!-- <button class="btn btn-secondary"  type="button" >Load-API-data</button> -->
+  
+    </form>
+  </div>
+<!-- </mat-card-content>
+</mat-card> -->
+</body>

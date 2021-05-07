@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+    font-size:14px;
+}
+body{
+    background: #444444;;
+
+}
+.wrapper{
+    display:flex;
+    position:relative;
+
+}
+.wrapper .sidebar{
+    position:fixed;
+    width:230px;
+    height: 100%;
+    background-color:rgb(99, 170, 194);
+    padding:30px 0;
+}
+.wrapper .sidebar h2{
+
+    text-transform:uppercase;
+    text-align:center;
+    margin-bottom:30px;
+}
+.wrapper .sidebar ul li{
+    padding:12px;
+    border-bottom:1px solid rgba(0,0,0,0.05);
+    border-top:1px solid rgba(225,225,225,0.05);
+}
+.wrapper .sidebar ul li a{
+    color:white;
+    display:block;
+}
+.wrapper .sidebar ul li a .fas{
+    width:35px;
+}
+.wrapper .sidebar ul li:hover{
+
+    background-color: rgb(50, 118, 141);
+    color: #58666e;
+}
+.logo{
+    margin-left: 0px;
+    margin-top:-30px;
+}
+a{
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.container{width:100%;margin:auto;}
+.form-field{width:100px;display:block !important;}
+
+.mat-slider{
+    width:100px;
+}
+mat-sidenav{
+    width:230px;
+    padding:0px;
+}
+.mat-drawer{
+    background-color:white;color:#fff
+}
+.tool{
+    background-color:rgb(99, 170, 194);
+}
+.side{
+    margin-left: 900px;
+}
+.log a{
+    color: blanchedalmond;
+}

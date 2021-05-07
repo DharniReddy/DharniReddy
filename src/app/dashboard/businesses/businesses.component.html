@@ -1,0 +1,22 @@
+<h1 class="head">Available Businesses</h1>
+<mat-card class="sim">
+    <img mat-card-image height="170px" src="assets/business_images/sims.jpeg" alt="mobile recharge">
+    <mat-card-actions>     
+        <button routerLink='/dashboard/mobile' class="btn btn-primary b">Mobile-Recharge</button>      
+        <button class="btn btn-primary b1" (click)="mobileRecharge()">Add-to-favourites</button>     
+    </mat-card-actions>
+</mat-card>
+<mat-card class="subscriptions">
+  <img mat-card-image src="assets/business_images/subscriptions.jpg" alt="mobile recharge">
+  <mat-card-actions>
+    <button routerLink='/dashboard/subscriptions' class="btn btn-primary sub-b">Subscriptions</button>
+    <button (click)="subscriptions()" class="btn btn-primary sub-fav">Add-to-favourites</button>
+  </mat-card-actions>
+</mat-card>
+<mat-card class="dth">
+  <img mat-card-image src="assets/business_images/dth_recharge.png" alt="mobile recharge">
+  <mat-card-actions>
+    <button routerLink='/dashboard/dth' class="btn btn-primary dth-b">DTH-Bill Payment</button>  
+    <button (click)="dth()" class="btn btn-primary dth-fav">Add-to-favourites</button>
+  </mat-card-actions>
+</mat-card>

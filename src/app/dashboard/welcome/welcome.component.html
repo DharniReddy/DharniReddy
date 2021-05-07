@@ -1,0 +1,27 @@
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav opened mode="side" postion="start">
+        <div class="wrapper">
+            <div class="sidebar">
+                <img class="logo" src="assets/home_images/logo.jpg" height="64" width="228">
+                <br><br>
+                <div>
+                    <ul>
+                        <li class="active"><a routerLink="/dashboard" ><i class="fas fa-home"></i>Home</a></li>
+                        <li><a routerLink="/card">AddCard</a></li>
+                        <li><a routerLink="/dashboard/profile"><i class="fa fa-exchange-alt text-info"></i>View-Profile</a></li>
+                        <li><a routerLink="/dashboard/favourites"><i class="fas fa-file-alt text-warning"></i>Favourites</a></li>
+                        <li><a routerLink="/dashboard/transactionshistory">Analytics</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+   </mat-sidenav>
+    <mat-sidenav-content position="start">
+        <mat-toolbar class="tool">
+            <div class="side">
+                <span class="log"><a (click)="logout()" href="">Logout</a></span>
+            </div>           
+        </mat-toolbar>  
+    <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

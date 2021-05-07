@@ -1,0 +1,82 @@
+<div class="content">
+      <h3>Analytics</h3>   
+      <div class ='container-fluid'>
+          <form [formGroup] = "transactionsForm">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label required">Select Business</label>
+                    <select name="type" class="select-field" formControlName="selectedBusiness" (click)="getBusinessTypes()">
+                        <option *ngFor="let business of businessesList"  [value]="business.businessName">{{business.businessName}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label required">Select Business Type </label>
+                    <select name="type" class="select-field" formControlName="selectedBusinessByType">
+                        <h1></h1>
+                        <option *ngFor="let businesstype of businessTypes" [value]="businesstype.businessType">{{businesstype.businessType}}</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <form [formGroup]="transactionsForm">
+        <div class="con1">
+            <div class="form-group">
+                <input type="date" formControlName="getday" class="form-control" placeholder="Enter a DOB">
+                <button class="btn btn-primary b1" (click)="getDataByDay()">By Day</button>
+            </div>
+        </div>        
+        <div class="form-group">
+            <div class="con2">
+                <input type="month" formControlName="getmonth">
+            </div>
+            <div class="b2">
+                <button class="btn btn-primary" (click)="getDataByMonth()">By Month</button>
+            </div>      
+        </div>      
+        <div class="form-group">
+            <div class="con3">
+                <input type="text"  formControlName="year" class="form-control" placeholder="YYYY">
+                <small class="text-danger" *ngIf="transactionsForm.get('year')!.pattren?.required">Enter Vaild Year.</small> 
+            </div>   
+            <div class="b3">
+                <button class="btn btn-primary date1" (click)="getDataByYear()">By Year</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div *ngIf="initialViewTransactions">
+    <div *ngIf="transactionsData?.length">
+        <div class="container">
+            <div class="container">
+                <div class="row col-md-11">
+                    <table class="table table-strriped custab">
+                        <thead>
+                            <tr>
+                                <th>BusinessName</th>
+                                <th>BusinessType</th>
+                                <th>PlanAmount</th>
+                                <th>PaymentDate</th>                         
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of transactionsData">
+                                <td>{{user.businessName}}</td>
+                                <td>{{user.businessType}}</td>
+                                <td>{{user.planAmount}}</td>
+                                <td>{{user.paymentDate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="initialViewTransactions">
+    <div *ngIf="!transactionsData?.length">
+        <h1 class="nodata">You Have Not Made Any Transactions..!</h1>
+    </div>
+</div>

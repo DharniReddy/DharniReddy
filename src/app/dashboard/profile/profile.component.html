@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="container">
+        <div class="row col-md-11">
+            <table class="table table-strriped custab">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Mobilenumber</th>
+                        <th>Date of Birth</th>
+                        <th>Edit</th>
+                        <th>View-Transactions</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of profileDetails">
+                        <td>{{user.username}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.mobilenumber}}</td>
+                        <td>{{user.dob}}</td>
+                        <td class="text-center"><button class="btn btn-danger btn-xs" (click)="edit()"><span class="glyphicon glyphicon-remove"></span>Edit</button></td>
+                        <td class="text-center"><button class="btn btn-primary" (click)="viewTransactions()"><span class="glyphicon glyphicon-remove"></span>view-Transactions</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

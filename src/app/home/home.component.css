@@ -1,0 +1,41 @@
+.button{
+    padding: 6px 26px;
+    color: #FFF;
+    border-radius: 5px;
+    background-color: #2d5c91;
+    margin-top: 10px;  
+}
+.b1{
+    margin-left: 800px;
+}
+.b2{
+    margin-left: 10px;
+}
+.main{
+    height: 70px;
+    border-color:#a0cef0;
+    background-color:rgb(138, 194, 212)
+}
+img{
+    margin-left: 5px;
+} 
+#second-section {
+    margin-top: 500px;
+    height: 595px;
+    background: url('/assets/home_images/pay1.jpg');
+}
+.pay{
+    margin-top: 20px;
+}
+.title-1 {
+    margin-top: -500px;
+    font-family: lato;
+    color: rgb(201, 64, 64);
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    margin-left: 520px;
+}
+.subtitle{
+    margin-left: 520px;
+}

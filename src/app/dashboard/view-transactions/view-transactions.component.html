@@ -1,0 +1,30 @@
+<div *ngIf="transactionDetails?.length">
+    <h2>All Transactions Details</h2>
+    <div class="container">
+        <div class="container">
+            <div class="row col-md-11">
+                <table class="table table-strriped custab">
+                    <thead>
+                        <tr>
+                            <th>BusinessName</th>
+                            <th>BusinessType</th>
+                            <th>PlanAmount</th>
+                            <th>PaymentDate</th>             
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of transactionDetails">
+                            <td>{{user.businessName}}</td>
+                            <td>{{user.businessType}}</td>
+                            <td>{{user.planAmount}}</td>
+                            <td>{{user.paymentDate}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!transactionDetails?.length">
+    <h1 class="nodata">You Have Not Made Any Transactions..!</h1>
+</div>

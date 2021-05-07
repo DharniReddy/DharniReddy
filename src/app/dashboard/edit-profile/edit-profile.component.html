@@ -1,0 +1,42 @@
+<h2>Update Profile</h2>
+<div class="content-profile">
+    <img src="assets/profile_pics/{{this.imageName}}" height="200px" width="200px" alt="img">
+    <h3><b>{{userName}}</b></h3>
+</div>
+<div class="content">
+    <div class ='container-fluid'>
+        <form [formGroup] = "updateProfileForm">
+        <div *ngFor="let user of profileDetails">
+            <div class="form-group"><br>
+                <label for="userName" class="control-label required">Username</label>
+                <input type="text" ngModel="{{user.username}}" formControlName="username" class="form-control">                   
+                <small class="text-danger" *ngIf="updateProfileForm.get('username')!.errors?.minlength">Min length is 3.</small>
+                <small class="text-danger" *ngIf="updateProfileForm.get('username')!.errors?.pattern">UserName should contain only Alphabets.</small>                    
+            </div>
+            <div class="form-group">
+                <label class="control-label required">Email</label>
+                <input type="email" ngModel="{{user.email}}" formControlName="email" class="form-control" placeholder="Enter a valid Email">
+                <div class="text-danger" *ngIf="updateProfileForm.get('email')!.errors?.email">Email is not valid.</div>
+                <small class="text-danger" *ngIf="updateProfileForm.get('email')!.errors?.required">Email is required.</small>                
+            </div>               
+            <div class="form-group">
+                <label class="control-label required">MobileNumber</label>
+                <input type="tel" ngModel="{{user.mobilenumber}}" formControlName="mobilenumber" class="form-control">
+                
+                <small class="text-danger" *ngIf="updateProfileForm.get('mobilenumber')!.errors?.required">MobileNumber is required.</small>
+                <small class="text-danger" *ngIf="updateProfileForm.get('mobilenumber')!.errors?.pattern">Enter Valid 10 digit mobile number.</small>
+            </div>
+            <div class="form-group">
+                <label class="control-label required">DateOfBirth</label>
+                <input type="date" ngModel="{{user.dob}}" formControlName="dob" class="form-control" placeholder="Enter a DOB">
+            </div>
+            <div class="form-group">
+                <label for="myfile">Update Profile:</label>
+                <input type="file" id="myfile" name="myfile" formControlName="profilePic">
+                <img src="assets/profile_pics/{{this.imageName}}" height="100px" width="100px" alt="img">
+            </div>
+            <button  class="btn btn-primary" type="submit" (click)="updateProfile()">Update</button>
+        </div>
+        </form>
+    </div>      
+</div>

@@ -1,0 +1,27 @@
+<div *ngIf="favouritesList?.length">
+    <img src="assets/business_images/fav2.png"  width="200px" height="200px">
+        <div class="business">
+            <div class="row col-md-8">
+                <table class="table table-strriped custab">
+                    <thead>
+                        <tr>
+                            <th>Favourite Businesses List</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of favouritesList">
+                            <td><button  class="btn btn-primary" (click)="goToBusiness(user.businessName)" type="submit">{{user.businessName}}</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+<div *ngIf="!favouritesList?.length">
+    <div class="top1">
+        <img src="assets/business_images/fav2.png"  width="200px" height="200px">
+        <img src="assets/business_images/fav2.png"  width="200px" height="200px">
+        <img src="assets/business_images/fav2.png"  width="200px" height="200px">
+        <h1 class="no-fav">You have not added any business to favourites List..!</h1>
+    </div>
+</div>
